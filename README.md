@@ -62,7 +62,7 @@ The counter should increase for every individual page view.  Can you fix the cur
 - Do specific numbers increment on each pageview?
 - Is your solution DRY?
 
-#### Challenge 3: Be More Specific
+#### Challenge 4 - Be More Specific
 **Page Specific CSS**: Can you think of a way to get the desired "Color Changer" behavior, without using _any_ javascript? (You may change only `application.html` and page specific `css` files).
 
 <details>

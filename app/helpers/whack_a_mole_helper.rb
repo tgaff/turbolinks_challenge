@@ -1,0 +1,2 @@
+module WhackAMoleHelper
+end

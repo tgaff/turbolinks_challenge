@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'whack_a_mole', to: 'whack_a_mole#index', as: 'moles'
+
   get '/', to: "welcome#index", as: "home"
 
   get '/goldenrod', to: "goldenrod#index", as: "gold"

@@ -1,0 +1,47 @@
+<h1>Whack A Mole</h1>
+<p>Use unobtrusive JavaScript/AJAX in Rails, reconfigure the delete buttons to gray the image,
+  and disable the button.
+  Your goal is to use 'remote: true' to delete each mole without the page reloading.
+</p>
+<p>Keep an eye on the "last loaded" time, if it changes, your page reloaded.</p>
+
+
+<div class="row ">
+    <div class="col-sm-6 col-md-8">
+      <h2>Example:</h2>
+      <p>To the right, see an example of what a 'whacked' mole should look like.</p>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag 'mole.png', class: 'mole-image grayed' %>
+        <div class="caption">
+          <h3>Diglet</h3>
+          <p><%= button_to 'Delete', '#', method: 'delete', class: "btn btn-primary disabled"  %></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="alert alert-warning" role="alert">
+  This page was last loaded at <strong><%= @last_load_time %></strong>.
+      If this changes, you reloaded the page...
+</div>
+<div class="alert alert-info" role="alert">
+  There are currently <strong><%= @moles.count %></strong> moles.
+</div>
+
+<div class="row">
+  <% @moles.each do |mole| %>
+    <div class="col-sm-6 col-md-4 mole">
+      <div class="thumbnail">
+        <%= image_tag 'mole.png', class: 'mole-image' %>
+        <div class="caption">
+          <h3><%= mole[:name] %></h3>
+<!--          <p><%= button_to 'Delete', mole_path(mole), method: 'delete', class: "btn btn-primary"%></p>-->
+          <p><%= button_to 'Delete', mole_path(mole), method: 'delete', remote: true, class: "btn btn-primary"%></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>

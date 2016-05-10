@@ -20,16 +20,46 @@ var page_view_count = {
   "goldenrod": 0,
   "lightcoral": 0,
   "lightseagreen": 0
-}
+};
 
 $(document).on("page:change", function(){
   var current_path = location.pathname.split("/")[1] || "home";
   page_view_count[current_path] += 1;
   $("#" + current_path + " .view_count.badge").text(page_view_count[current_path]);
-})
+});
 
 $(document).on("page:change", function(e){
   var color_in_path = location.pathname.split("/")[1];
   if (!color_in_path){ return; }
   $("body").css("background-color", color_in_path);
-})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////
+// DO NOT EDIT BELOW here
+/////////////////////////////////////////////////////////////
+$(document).on('ajax:beforeSend', function(xhr, settings) {
+  if (xhr.currentTarget.URL.match(/whack/) ) {
+    console.log('someone on whack_a_mole fired an AJAX request!');
+  }
+});

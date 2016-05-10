@@ -1,0 +1,21 @@
+default: &default
+  adapter: sqlite3
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: mole_development.sqlite3
+
+test:
+  <<: *default
+  database: mole_test.sqlite3
+
+
+production:
+  <<: *default
+  database: mole_production.sqlite3
+  username: mole
+  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'whack_a_mole', to: 'whack_a_mole#index', as: 'moles'
+  post 'whack_a_mole/increment', to: 'whack_a_mole#increment', as: 'plus_one'
   delete 'whack_a_mole/:id', to: 'whack_a_mole#destroy', as: 'mole'
+
 
   get '/', to: "welcome#index", as: "home"
 

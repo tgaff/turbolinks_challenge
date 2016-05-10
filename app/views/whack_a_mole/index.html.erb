@@ -5,8 +5,13 @@
 </p>
 <p>Keep an eye on the "last loaded" time, if it changes, your page reloaded.</p>
 
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-sm-6">
+    <p><%= button_to "Count: #{@count}", plus_one_path, remote: true, method: 'post', class: "btn btn-primary"  %></p>
+  </div>
+</div>
 
-<div class="row ">
+<div class="row">
     <div class="col-sm-6 col-md-8">
       <h2>Example:</h2>
       <p>To the right, see an example of what a 'whacked' mole should look like.</p>

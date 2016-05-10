@@ -3,6 +3,7 @@
 | **Objectives** |
 | :---- |
 | Explore javascript in rails |
+| Make use of `remote: true` for unobtrusive improvements to your page |
 | Discover Turbolinks & Turbolinks Events |
 | Organize javascript to only execute on specific pages |
 
@@ -13,11 +14,19 @@
 
 ##Instructions
 
-This lab does not have a database! Just clone, bundle, and run `rails server`. Then launch the home page ("/") in your browser.
+Just clone, bundle, `rake db:setup` and then run `rails server`.
 
-You should work exclusively in your javascript directory: `app/assets/javascripts/`.
+#### Challenge 1 - Whack A Mole
 
-#### Challenge 1 - Color Changer
+Use `remote: true` to make the delete request.  Be sure to tie your javascript into the appropriate [jquery_ujs](https://github.com/rails/jquery-ujs/wiki/ajax) ajax events.
+
+Visit [localhost:3000/whack_a_mole](http://localhost:3000/whack_a_mole) to get started.  You should be able to gray-out the image and disable the button after each mole is deleted.  Make sure the page isn't refreshing!
+
+
+#### Challenge 2 - Color Changer
+
+**For this challenge you should work exclusively in your javascript directory: `app/assets/javascripts/`.**
+
 
 When you click on a color page, your background color should change to match the name of the color in your url path. Can you fix the current javascript?
 
@@ -43,7 +52,9 @@ location.pathname.split("/")[1]; // warning: returns "" if path is "/"!
 ```
 </details>
 
-#### Challenge 2 - Page View Counter
+#### Challenge 3 - Page View Counter
+
+**For this challenge you should work exclusively in your javascript directory: `app/assets/javascripts/`.**
 
 The counter should increase for every individual page view.  Can you fix the current javascript?
 

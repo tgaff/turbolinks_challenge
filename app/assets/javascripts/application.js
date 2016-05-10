@@ -21,3 +21,33 @@ var page_view_count = {
   "lightcoral": 0,
   "lightseagreen": 0
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////
+// DO NOT EDIT BELOW here
+/////////////////////////////////////////////////////////////
+$(document).on('ajax:beforeSend', function(xhr, settings) {
+  if (xhr.currentTarget.URL.match(/whack/) ) {
+    console.log('someone on whack_a_mole fired an AJAX request!');
+  }
+});
